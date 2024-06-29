@@ -1,69 +1,18 @@
 import React, { useState } from "react";
 import Logo from "../images/logo.svg";
-import DashboardIconActive from "../icons/dashboard-icon-active.svg";
-import DashboardIcon from "../icons/dashboard-icon.svg";
-import BagIcon from "../icons/bag.svg";
-import TwoUserIcon from "../icons/two-users.svg";
-import TwoUserIconWhite from "../icons/two-user-active.svg";
-import FolderIcon from "../icons/folder.svg";
-import FolderIconWhite from "../icons/folder-white.svg";
-import ChatIcon from "../icons/chat.svg";
-import ChatIconWhite from "../icons/chat-white.svg";
-import SettingIcon from "../icons/setting.svg";
-import SettingIconWhite from "../icons/setting-white.svg";
 import { NavLink, Outlet, useLocation } from "react-router-dom";
 import BootomArrow from "../icons/bottom-arrow.svg";
 import BellIcon from "../icons/bell.svg";
 import LoginAvatar from "../images/login-avatar.svg";
-import BagWhiteIcon from "../icons/bag-white.svg";
 import HeadphonesIcon from "../icons/headphones.svg";
 import GiftIcon from "../icons/gift-icon.svg";
 import DownChevron from "../icons/down-chevron.svg";
 import LogoutIcon from "../icons/logout-icon.svg";
+import { sidebarOptions } from "../utils/sidebarMockData";
 
 const Sidebar = ({ children }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const location = useLocation();
-
-  const sidebarOptions = [
-    {
-      path: "/dashboard",
-      activeIcon: DashboardIconActive,
-      icon: DashboardIcon,
-      name: "Dashboard",
-    },
-    {
-      path: "/orders",
-      activeIcon: BagWhiteIcon,
-      icon: BagIcon,
-      name: "Orders",
-      notifications: 3,
-    },
-    {
-      path: "/customers",
-      icon: TwoUserIcon,
-      activeIcon: TwoUserIconWhite,
-      name: "Customers",
-    },
-    {
-      path: "/inventory",
-      icon: FolderIcon,
-      activeIcon: FolderIconWhite,
-      name: "Inventory",
-    },
-    {
-      path: "/conversations",
-      icon: ChatIcon,
-      activeIcon: ChatIconWhite,
-      name: "Conversations",
-    },
-    {
-      path: "/settings",
-      icon: SettingIcon,
-      activeIcon: SettingIconWhite,
-      name: "Settings",
-    },
-  ];
 
   const isActive = (path) => {
     if (path === location.pathname) {
@@ -74,6 +23,7 @@ const Sidebar = ({ children }) => {
   };
 
   const toggleSideBar = () => {
+    sessionStorage.setItem("isSidebarOpen", !isSidebarOpen);
     setIsSidebarOpen((prev) => !prev);
   };
   return (
