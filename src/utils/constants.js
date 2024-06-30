@@ -8,6 +8,7 @@ export const ACTIVE = "Active";
 export const ALL_ORDERS = "All Orders";
 export const PENDING = "Pending";
 export const COMPLETED = "Completed";
+export const IN_PROGRESS = "In-Progress";
 export const ABANDONED_CART = "Abandoned Cart";
 export const ALL_PRODUCTS = "All Products";
 export const CANCELLED = "Cancelled";

@@ -18,3 +18,58 @@ code {
   border-radius: 0.75rem;
   color: #fff;
 }
+
+.ant-checkbox-inner {
+  width: 24px !important;
+  height: 24px !important;
+  border-radius: 8px !important;
+}
+
+th {
+  background-color: #ffffff !important;
+}
+
+.ant-table-thead > tr > th,
+.ant-table-thead > tr > td {
+  border-top: 1px solid #e1e2e9 !important;
+  border-bottom: 1px solid #e1e2e9 !important;
+}
+:where(.css-dev-only-do-not-override-m4timi).ant-table-wrapper
+  .ant-table-tbody
+  > tr
+  > th,
+:where(.css-dev-only-do-not-override-m4timi).ant-table-wrapper
+  .ant-table-tbody
+  > tr
+  > td {
+  border-bottom: none !important;
+}
+:where(.css-dev-only-do-not-override-m4timi).ant-table-wrapper
+  .ant-table-thead
+  > tr
+  > th:not(:last-child):not(.ant-table-selection-column):not(
+    .ant-table-row-expand-icon-cell
+  ):not([colspan])::before,
+:where(.css-dev-only-do-not-override-m4timi).ant-table-wrapper
+  .ant-table-thead
+  > tr
+  > td:not(:last-child):not(.ant-table-selection-column):not(
+    .ant-table-row-expand-icon-cell
+  ):not([colspan])::before {
+  display: none !important;
+}
+
+.ant-table-thead tr .ant-table-cell {
+  padding-top: 14px !important;
+  padding-bottom: 14px !important;
+  color: #2c2d33 !important;
+  font-weight: 500 !important;
+  font-family: "Inter" !important;
+}
+
+tbody tr .ant-table-cell {
+  height: 48px !important;
+  font-size: 14px !important;
+  color: #6e7079 !important;
+  font-weight: 400 !important;
+}

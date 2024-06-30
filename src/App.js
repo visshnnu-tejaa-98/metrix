@@ -1,17 +1,16 @@
 import { Outlet } from "react-router-dom";
 import "./App.css";
-import Breadgrums from "./components/Breadgrums";
-// import Sidebar from "./components/Sidebar";
-import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
-import Dashboard from "./pages/Dashboard";
+import AppContextProvider from "../src/contexts/appContext";
 
 function App() {
   return (
     <div className="App">
-      <Sidebar>
-        <Outlet />
-      </Sidebar>
+      <AppContextProvider>
+        <Sidebar>
+          <Outlet />
+        </Sidebar>
+      </AppContextProvider>
     </div>
   );
 }

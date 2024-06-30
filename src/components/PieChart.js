@@ -11,10 +11,7 @@ const PieChart = () => {
   ];
   const COLORS = ["#97A5EB", "#FFCC91", "#5570F1"];
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-  useEffect(() => {
-    setIsSidebarOpen(JSON.parse(sessionStorage.getItem("isSidebarOpen")));
-  }, [isSidebarOpen]);
-  console.log(isSidebarOpen);
+
   return (
     <div
       className={`relative bg-[#ffffff] w-auto rounded-[0.75rem] p-[1rem] mx-[0.4375rem] mb-[1.25rem] grow`}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Logo from "../images/logo.svg";
 import { NavLink, Outlet, useLocation } from "react-router-dom";
 import BootomArrow from "../icons/bottom-arrow.svg";
@@ -9,9 +9,12 @@ import GiftIcon from "../icons/gift-icon.svg";
 import DownChevron from "../icons/down-chevron.svg";
 import LogoutIcon from "../icons/logout-icon.svg";
 import { sidebarOptions } from "../utils/sidebarMockData";
+import AppContext from "../contexts/appContext";
 
 const Sidebar = ({ children }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const AppCtx = useContext(AppContext);
+
   const location = useLocation();
 
   const isActive = (path) => {
@@ -21,9 +24,13 @@ const Sidebar = ({ children }) => {
       return false;
     }
   };
-
+  // console.log({ AppCtx });
   const toggleSideBar = () => {
     sessionStorage.setItem("isSidebarOpen", !isSidebarOpen);
+    // let ddd = AppCtx.toggleSidebar();
+    // console.log({ ddd });
+    AppCtx.toggleSidebar();
+    // console.log("From Context:::", AppCtx.isSidebarOpen);
     setIsSidebarOpen((prev) => !prev);
   };
   return (
@@ -138,7 +145,13 @@ const Sidebar = ({ children }) => {
       <div className="w-[calc(100vw-88px)] bg-[#ffffff] duration-150">
         <div className="py-[14px] px-[21px] flex justify-between">
           <div className="font-medium leading-[30px]">
-            <h1>Dashboard</h1>
+            <h1>
+              {location.pathname === "/dashboard"
+                ? "Dashboard"
+                : location.pathname === "/orders"
+                ? "Orders"
+                : "Page Error"}
+            </h1>
           </div>
           <div className="flex gap-[20px] items-center">
             <div>

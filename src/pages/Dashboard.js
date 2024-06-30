@@ -1,7 +1,6 @@
 import React from "react";
 import Breadgrums from "../components/Breadgrums";
 import OverviewCard from "../components/OverviewCard";
-import BarChart from "../images/barChart.png";
 import { overviewDashboardData } from "../utils/overviewDashboardData";
 import { dashboardInsiteCardData } from "../utils/dashboardInsiteData";
 import PieChart from "../components/PieChart";
