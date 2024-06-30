@@ -4,4 +4,4 @@
 1. clone the repository
 2. run "npm install"
 3. run "npm start"
-4. you can see in http://localhost:3000/
+4. Navigate to dashboard scrreen [http://localhost:3000/dashboard](http://localhost:3000/dashboard)
